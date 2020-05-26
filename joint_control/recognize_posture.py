@@ -43,10 +43,10 @@ class PostureRecognitionAgent(AngleInterpolationAgent):
 		 perception.joint['RKneePitch'],
 		 perception.imu[0],
 		 perception.imu[1]]]
-	classes = listdir('robot_pose_data')
+	name_classes = listdir('robot_pose_data')
 	clf = pickle.load(open(self.posture_classifier))
 	predicted = clf.predict(Data)
-	posture = classes[predicted[0]]
+	posture = name_classes[predicted[0]]
         return posture
 
 if __name__ == '__main__':
