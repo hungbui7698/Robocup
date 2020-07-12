@@ -81,12 +81,11 @@ class ClientAgent(object):
 if __name__ == '__main__':
     agent = ClientAgent()
     # TEST CODE HERE
-
-    print 'Current angle is', agent.get_angle('HeadYaw')
-    print 'Current posture is ''"' + agent.get_posture() + '"'
-    print 'Moving head ', agent.set_angle('HeadYaw', 1.5)
+    print 'Current angle is   ', agent.get_angle('HeadYaw')
+    print 'Current posture: ''"' + agent.get_posture() + '"'
+    print 'set_angle ', agent.set_angle('HeadYaw', 1.5)
     
     time.sleep(5)
-    print 'Current angle is now', agent.get_angle('HeadYaw')
+    print 'Current angle:', agent.get_angle('HeadYaw')
     agent.execute_keyframes(hello())
     print 'end'
